@@ -33,10 +33,17 @@ export default function Navbar() {
             >
               Dashboard
             </Link>
+
+            <div className="flex items-center space-x-2 ">
+              <Link href={"/login"} className="bg-primary text-background px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">Sign in with Github</Link>
+            </div>
           </div>
 
           <div className="md:hidden flex items-center">
-            <button className="text-foreground hover:text-primary focus:outline-none focus:text-primary" onClick={() => setIsMenuOpen((prev) => !prev)}>
+            <button
+              className="text-foreground hover:text-primary focus:outline-none focus:text-primary"
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+            >
               {" "}
               <svg
                 className="h-6 w-6"
@@ -54,28 +61,34 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-        {isMenuOpen && <div className="md:hidden">
-          <div className="px-2 pb-2 pt-2 space-y-1 sm:px-3">
-            <Link
-              href="/events"
-              className="text-foreground hover:text-primary px-3 py-2 rounded-md block text-base font-medium transition-colors"
-            >
-              Events
-            </Link>
-            <Link
-              href={"/events/create"}
-              className="text-foreground hover:text-primary px-3 py-2 rounded-md block text-base font-medium transition-colors"
-            >
-              Create Event
-            </Link>
-            <Link
-              href={"/dashboard"}
-              className="text-foreground hover:text-primary px-3 py-2 rounded-md block text-base font-medium transition-colors"
-            >
-              Dashboard
-            </Link>
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pb-2 pt-2 space-y-1 sm:px-3">
+              <Link
+                href="/events"
+                className="text-foreground hover:text-primary px-3 py-2 rounded-md block text-base font-medium transition-colors"
+              >
+                Events
+              </Link>
+              <Link
+                href={"/events/create"}
+                className="text-foreground hover:text-primary px-3 py-2 rounded-md block text-base font-medium transition-colors"
+              >
+                Create Event
+              </Link>
+              <Link
+                href={"/dashboard"}
+                className="text-foreground hover:text-primary px-3 py-2 rounded-md block text-base font-medium transition-colors"
+              >
+                Dashboard
+              </Link>
+
+                          <div className="flex items-center space-x-2 ">
+              <Link href={"/login"} className="bg-primary text-background px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">Sign in with Github</Link>
+            </div>
+            </div>
           </div>
-        </div>}
+        )}
       </div>
     </nav>
   );
