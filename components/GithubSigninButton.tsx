@@ -1,6 +1,6 @@
 "use client";
 
-import { signIn } from "@/auth";
+import { signIn } from "@/lib/auth";
 import { login } from "@/lib/auth-actions";
 
 export function GithubSigninButton() {
